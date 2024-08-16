@@ -7,7 +7,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import static java.lang.System.out;
 
 @SpringBootApplication
-public class WebappApplication {
+public class WebApplication {
     private static ConfigurableApplicationContext context = null;
 
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class WebappApplication {
         switch (command) {
             case "start":
                 out.printf("PID %s: Starting the application...%n", processId);
-                context = SpringApplication.run(WebappApplication.class, args);
+                context = SpringApplication.run(WebApplication.class, args);
                 out.printf("PID %s: The Spring Application has started. Context: %s%n", processId, context.toString());
                 break;
             case "stop":
