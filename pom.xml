@@ -78,7 +78,7 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>sh</directory>
+                                    <directory>scripts</directory>
                                     <includes>
                                         <include>**/*</include>
                                     </includes>

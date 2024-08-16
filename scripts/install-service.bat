@@ -1,3 +1,7 @@
+# Install the service.
+# The %~dp0 is some batch file magic that expands to the batch file's path
+# Update the Java Home directory accordingly
+
 %~dp0prunsrv.exe //IS//HelloService ^
     --Description "HelloService" ^
     --Startup manual ^
