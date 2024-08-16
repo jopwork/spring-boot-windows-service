@@ -24,6 +24,12 @@ public class WebApplication {
                 out.printf("PID %s: Starting the application...%n", processId);
                 context = SpringApplication.run(WebApplication.class, args);
                 out.printf("PID %s: The Spring Application has started. Context: %s%n", processId, context.toString());
+
+                // Add shutdown hook
+                Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                    out.printf("PID %s: Gracefully shutting down...%n", processId);
+                    SpringApplication.exit(context, () -> 0);
+                }));
                 break;
             case "stop":
                 out.printf("PID %s: Stopping the application..., Context: %s%n", processId, context == null ? "null" : context.toString());
